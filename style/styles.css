@@ -2,6 +2,6 @@ body {
     font-family: "Droid Sans Mono",  monospace;
 }
 .sample-title {
-    max-width: 15rem;
+    max-width: 18rem;
     text-transform: capitalize;
 }

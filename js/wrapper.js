@@ -14,11 +14,14 @@
     'Анек glitch X.mp3',
     'Анек полный X.mp3',
     'Товарищи! X.mp3',
+    'Заполняю X.mp3',
+    'Связь прервана X.mp3',
+    'Смех X.mp3',
   ]
   const MUSIC = [
     'Chopin waltz op69.mp3',
-    'Soviet Union National Anthem 8-bit.mp3',
-    'mixkit-creepy-radio-frequency-2558.wav'
+    'Hymn X.mp3',
+    'Noise.mp3',
   ]
   const TEMPLATE = `
     <div class="p-3 mb-4 mr-2" id={id}>
@@ -32,12 +35,15 @@
   /**
    * Get readable sample title
    */
-  const getTitle = src => src.replace('X.mp3', '').replace(/_/g, ' ')
+  const getTitle = src => src
+    .replace('X.mp3', '')
+    .replace(/_/g, ' ')
 
   const getId = src => src
+    .toLowerCase()
     .replace('.mp3', '')
     .replace('.wav', '')
-    .replace(/\s/g, '-').toLowerCase()
+    .replace(/\s/g, '-')
 
   /**
    * Force play only one audio per time
@@ -56,10 +62,11 @@
   }
 
   const adjustMusic = () => {
-    document.querySelector('#soviet-union-national-anthem-8-bit audio').volume = 0.05
+    document.querySelector('#hymn-x audio').volume = 0.1
+    document.querySelector('#hymn-x audio').setAttribute('loop', 'true')
 
-    document.querySelector('#mixkit-creepy-radio-frequency-2558 audio').setAttribute('loop', true)
-    document.querySelector('#mixkit-creepy-radio-frequency-2558 audio').volume = 0.2
+    document.querySelector('#noise audio').setAttribute('loop', 'true')
+    document.querySelector('#noise audio').volume = 0.2
   }
 
   const render = ($container, audioFiles, basePath) => {
