@@ -11,12 +11,17 @@ Assistant's purpose: to play samples during the game to provide audio for the ma
 
 I ran the module in a home setting of retro-Soviet sci-fi, and the webapp brought us a lot of amusement.
 
-## How to Run
+
+## Web-version
+[GitHub Pages](https://8kto.github.io/tau-sigma-helper/) version (only in Russian ATM).
+
+
+## How to rin locally
 
 ### Simple method
 Download the repository archive (green button on the [project's GitHub page](https://github.com/8kto/tau-sigma-helper)), extract it, and open the `index.html` file in a web browser.
 
-### For Developers
+### For developers
 ```
 git clone git@github.com:8kto/tau-sigma-helper.git
 cd tau-sigma-helper
@@ -25,14 +30,14 @@ yarn install --frozen-lockfile # or npm ci
 The project was too simple to set up a web server for it, so just open the `index.html` file in a web browser.
 
 
-## How to Play Your Own Samples
+## How to play your own samples
 
 ### Simple method
 1. Delete the audio files from the `./samples` and `./music` folders.
 2. Copy your own files there. Files in the `./music` folder will be shown in a dedicated section; the player for these files loops the playback.
 3. Open the `./js/samples.js` file and replace the old filenames with your own.
 
-### For Developers
+### For developers
 1. Repeat steps 1-2.
 2. Execute `yarn parse` (or `npm run parse`). This command will parse the files in the folders and update `./js/samples.js`.
 
