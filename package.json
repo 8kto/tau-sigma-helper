@@ -1,0 +1,24 @@
+{
+  "title": "Tau Sigma Geo Helper Sampler",
+  "name": "tau-sigma-helper",
+  "version": "1.1",
+  "description": "Samples JukeBox",
+  "author": "Igor Okto <zm@axisful.info>",
+  "homepage": "https://8kto.github.io/tau-sigma-helper",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/8kto/tau-sigma-helper"
+  },
+  "scripts": {
+    "parse": "node ./scripts/parse-samples.js",
+    "predeploy": "yarn install --frozen-lockfile",
+    "deploy": "gh-pages -d ."
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.1",
+    "jquery": "^3.7.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.0.0"
+  }
+}
