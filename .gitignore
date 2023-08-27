@@ -2,3 +2,4 @@
 vendor
 speech-src/
 node_modules/
+build/
