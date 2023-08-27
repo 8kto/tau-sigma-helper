@@ -11,7 +11,7 @@
   },
   "scripts": {
     "parse": "node ./scripts/parse-samples.js",
-    "predeploy": "yarn install --frozen-lockfile",
+    "predeploy": "yarn install --frozen-lockfile; mkdir -p build/; rm -rf build/*; cp -r js music samples node_modules style index.html build/",
     "deploy": "gh-pages -d ."
   },
   "dependencies": {
