@@ -10,15 +10,11 @@
     "url": "https://github.com/8kto/tau-sigma-helper"
   },
   "scripts": {
-    "parse": "node ./scripts/parse-samples.js",
-    "predeploy": "yarn install --frozen-lockfile; mkdir -p build/; rm -rf build/*; cp -r js music samples node_modules style index.html build/",
-    "deploy": "gh-pages -d build"
+    "parse": "node ./scripts/parse-samples.js"
   },
   "dependencies": {
     "bootstrap": "^5.3.1",
     "jquery": "^3.7.0"
   },
-  "devDependencies": {
-    "gh-pages": "^6.0.0"
-  }
+  "devDependencies": {}
 }
