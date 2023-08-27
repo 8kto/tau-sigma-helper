@@ -1,8 +1,25 @@
 body {
   font-family: "Droid Sans Mono", monospace;
+  filter: blur(0.6px);
 }
 
 .sample-title {
   max-width: 18rem;
   text-transform: capitalize;
+}
+
+.page-header {
+  background-image: url("moon-landscape-cropped.jpeg");
+  background-position: center 65%;
+  padding-top: 5rem!important;
+  padding-bottom: 5rem!important;
+}
+
+.page-footer {
+  background-image: url("moon-landscape-cropped.jpeg");
+  background-position: center 90%;
+}
+
+.page-section {
+  background: #f8f9fa;
 }
