@@ -1,5 +1,7 @@
 Samples JukeBox
 ----
+* [Russian version](./README.ru.md)
+
 
 A simple assistant for playing samples and music. 
 It was created for the module [The Horror on Tau Sigma 7](https://www.drivethrurpg.com/product/367968/The-Horror-on-Tau-Sigma-7) for the sci-fi horror roleplaying game [Mothership](https://www.mothershiprpg.com/).
