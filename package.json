@@ -8,6 +8,9 @@
     "type": "git",
     "url": "https://github.com/8kto/tau-sigma-helper"
   },
+  "scripts": {
+    "parse": "node ./scripts/parse-samples.js"
+  },
   "dependencies": {
     "bootstrap": "^5.3.1",
     "jquery": "^3.7.0"
