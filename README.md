@@ -1,4 +1,4 @@
-Samples JukeBox
+Σamples JukeBox 7
 ----
 * [Russian version](./README.ru.md)
 
