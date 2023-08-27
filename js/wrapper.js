@@ -1,30 +1,6 @@
 (() => {
-  const SAMPLES_BASE_PATH = './speech'
-  const MUSIC_BASE_PATH = './music'
-  const SAMPLES = [
-    'Слава Союзу! X.mp3',
-    'Вас приветствует Универсальный гео-разведывательный X.mp3',
-    'Введите запрос или выберите из пунктов меню X.mp3',
-    '1 Вложить образец породы X.mp3',
-    '2 Связаться со станцией X.mp3',
-    '3 Получить карту местности X.mp3',
-    '4 Прослушать анекдот X.mp3',
-    'Введите запрос X.mp3',
-    'Выполняю запрос X.mp3',
-    'Анек glitch X.mp3',
-    'Анек полный X.mp3',
-    'Товарищи! X.mp3',
-    'Заполняю X.mp3',
-    'Связь прервана X.mp3',
-    'Смех X.mp3',
-  ]
-  const MUSIC = [
-    'Chopin waltz op69.mp3',
-    'Hymn X.mp3',
-    'Noise.mp3',
-  ]
   const TEMPLATE = `
-    <div class="p-3 mb-4 mr-2" id={id}>
+    <div class="p-3 mb-4 mr-2" id="{id}">
       <p class="sample-title text-truncate font-weight-bold">{title}</p>
       <audio controls preload="auto">
         <source src="{src}" type="audio/mpeg">
@@ -34,57 +10,73 @@
 
   /**
    * Get readable sample title
+   * @param {AudioSampleInfo} info
+   * @returns {string}
    */
-  const getTitle = src => src
-    .replace('X.mp3', '')
-    .replace(/_/g, ' ')
-
-  const getId = src => src
-    .toLowerCase()
-    .replace('.mp3', '')
-    .replace('.wav', '')
-    .replace(/\s/g, '-')
+  const getTitle = info =>
+    info.name.replace(/\.mp3$/i, '')
+      .replace(/\.wav$/i, '')
+      .replace(/\.flac$/i, '')
+      .replace(/\.midi$/i, '')
+      .replace(/_/g, ' ')
 
   /**
-   * Force play only one audio per time
+   * @param {AudioSampleInfo} info
+   * @returns {string}
    */
-  const handleSamplesPlaying = () => {
-    const audios = $('#speech-container audio');
+  const getId = info => info.id.toString()
+
+  /**
+   * Force playing only one sample at time.
+   * Music still can be layered (or include `#music audio` as well)
+   */
+  const bindPlayers = () => {
+    const audios = $('#samples audio')
     audios.on('play', function () {
-      const self = this;
+      const self = this
 
       audios.not(this).each(function () {
-        this.pause();
-      });
+        this.pause()
+      })
 
-      self.play();
-    });
+      self.play()
+    })
   }
 
   const adjustMusic = () => {
-    document.querySelector('#hymn-x audio').volume = 0.1
-    document.querySelector('#hymn-x audio').setAttribute('loop', 'true')
-
-    document.querySelector('#noise audio').setAttribute('loop', 'true')
-    document.querySelector('#noise audio').volume = 0.2
+    // Make music play in loop
+    document.querySelectorAll('#music audio').forEach((elem) => {
+      elem.setAttribute('loop', 'true')
+    })
   }
 
+  /**
+   *
+   * @param {jQuery} $container
+   * @param {Array<AudioSampleInfo>} audioFiles
+   * @param {string} basePath
+   */
   const render = ($container, audioFiles, basePath) => {
-    $container.html(
-      audioFiles.map(path => {
-        return TEMPLATE
-          .replace('{src}', `${basePath}/${path}`)
-          .replace('{title}', getTitle(path))
-          .replace('{id}', getId(path))
-      })
-    )
+    $container.html(audioFiles.map(info => {
+      return TEMPLATE
+        .replace('{src}', `${basePath}/${info.name}`)
+        .replace('{title}', getTitle(info))
+        .replace('{id}', getId(info))
+    }))
   }
 
   jQuery(() => {
-    render($('#speech-container'), SAMPLES, SAMPLES_BASE_PATH)
-    render($('#music-container'), MUSIC, MUSIC_BASE_PATH)
+    if (typeof SAMPLES_STATE === 'undefined') {
+      alert('SAMPLES_STATE is not loaded, check the js/samples.js file')
 
-    handleSamplesPlaying()
+      return
+    }
+
+    Object.entries(SAMPLES_STATE).forEach(([key, files]) => {
+      render($('#' + key), files, key)
+    })
+
+    bindPlayers()
     adjustMusic()
   })
 })()
