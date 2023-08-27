@@ -2,7 +2,7 @@ Samples JukeBox
 ----
 
 A simple assistant for playing samples and music. 
-It was created for the module [The Horror on Tau Sigma 7](https://www.drivethrurpg.com/product/367968/The-Horror-on-Tau-Sigma-7) for the tabletop role-playing game in the genre of sci-fi horror [Mothership](https://www.mothershiprpg.com/).
+It was created for the module [The Horror on Tau Sigma 7](https://www.drivethrurpg.com/product/367968/The-Horror-on-Tau-Sigma-7) for the sci-fi horror roleplaying game [Mothership](https://www.mothershiprpg.com/).
 **Can be configured for other games** as well, so I'm making it publicly available.
 
 Assistant's purpose: to play samples during the game to provide audio for the machine (near the crater) that players can interact with.
