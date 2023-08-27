@@ -2,12 +2,8 @@ Samples JukeBox
 ----
 
 Простой помощник для проигрывания сэмплов и музыки. 
-Был написан для проведения модуля [The Horror on Tau Sigma 7] для настольной ролевой игры в жанре научно-фантастических ужасов [Mothership].
+Был написан для проведения модуля [The Horror on Tau Sigma 7](https://www.drivethrurpg.com/product/367968/The-Horror-on-Tau-Sigma-7) для настольной ролевой игры в жанре научно-фантастических ужасов [Mothership](https://www.mothershiprpg.ru).
 
 Назначение помощника: проигрывать сэмплы на игре для озвучки аппарата у кратера, с которым могут взаимодействовать игроки.
 
 Модуль я провёл в домашнем сеттинге ретро-советской фантастики и автомат изрядно нас повеселил. Смех и полный анекдот рекомендуется ставить на "титры", по окончанию игры. 
-
-
-[The Horror on Tau Sigma 7][https://www.drivethrurpg.com/product/367968/The-Horror-on-Tau-Sigma-7]
-[Mothership][https://www.mothershiprpg.ru/modules.html]
