@@ -7,7 +7,7 @@ It was created for the module [The Horror on Tau Sigma 7](https://www.drivethrur
 
 Assistant's purpose: to play samples during the game to provide audio for the machine (near the crater) that players can interact with.
 
-I ran the module in a home setting of retro-Soviet sci-fi, and the device brought us a lot of amusement.
+I ran the module in a home setting of retro-Soviet sci-fi, and the webapp brought us a lot of amusement. I generated the phrases using a simple program called [Balabolka](https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D0%BB%D0%B0%D0%B1%D0%BE%D0%BB%D0%BA%D0%B0). Then, I applied glitch effects using [DAW Reaper](https://www.reaper.fm/).
 
 ## How to Run
 
