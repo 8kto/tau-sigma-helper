@@ -1,7 +1,7 @@
 (() => {
   const TEMPLATE = `
     <div class="p-3 mb-4 mr-2" id="{id}">
-      <p class="sample-title text-truncate font-weight-bold">{title}</p>
+      <p class="sample-title text-center text-truncate font-weight-bold">{title}</p>
       <audio controls preload="auto">
         <source src="{src}" type="audio/mpeg">
       </audio>
